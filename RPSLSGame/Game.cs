@@ -22,13 +22,10 @@ namespace RPSLSGame
 
         public void DisplayRules()
         {
-            Console.WriteLine("Select solo or Co-op then select your gestures player with most rounds won wins the game.");
+            Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with most rounds won wins the game.");
         }
 
-        public void SelectNumberOfPlayers()
-        {
-
-        }
+        
 
 
         //1. Display the rules

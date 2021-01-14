@@ -9,9 +9,12 @@ namespace RPSLSGame
     class Player
     {
         //member variables
+        string playerName;
 
         //constructor
 
         //member methods
+
+
     }
 }
