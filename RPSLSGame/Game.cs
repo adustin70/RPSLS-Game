@@ -9,43 +9,51 @@ namespace RPSLSGame
     class Game
     {
         //member variables
-        Player playerOne;
-        Player playerTwo;
-        Player computer;
+        Human playerOne;
+        Human playerTwo;
+        Computer computer;
 
         //constructor
         public Game()
         {
-            playerOne = new Player();
-            playerTwo = new Player();
-            computer = new Player();
+            playerOne = new Human();
+            playerTwo = new Human();
+            computer = new Computer();
         }
         //member methods
 
         public void DisplayRules()
         {
-            Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with best two out of three wins.");
+            Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with best two out of three wins.\n");
         }
 
         public void SelectPlayers()
         {
-            string singlePlayer = "Single Player";
-            string multiPlayer = "Co-op";
+            int singlePlayer = 1;
+            int multiPlayer = 2;
 
-            Console.WriteLine($"Select {singlePlayer} or {multiPlayer}?");
-            string userInput = Console.ReadLine();
+            Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.");            
+            int userInput = Int32.Parse(Console.ReadLine());
 
             if (userInput == singlePlayer)
             {
-                Console.WriteLine("You have chosen Single Player.");
-            }
-            else
-            {
-                Console.WriteLine("You have chosen Co-op.");
-            }
+                Console.WriteLine("You have chosen Single Player.\n");
+
+                if (userInput == singlePlayer)
+                {
+                    playerOne.FirstPlayerSelectGesture();
+                    computer.ComputerSelectGesture();
+                }
+                else
+                {
+                    Console.WriteLine($"You have chosen MultiPlayer.\n");
+                    playerOne.FirstPlayerSelectGesture();
+                    playerTwo.SecondPlayerSelectGesture();
+                }
+            }            
         }
 
-
+        
 
         //1. Display the rules
         //2. Single Player or Multiplayer?
