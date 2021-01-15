@@ -18,5 +18,17 @@ namespace RPSLSGame
 
 
         //member methods
+        public void ComputerSelectGesture()
+        {
+            
+            
+            for (int i = 0; i < gestures.Count; i++)
+            {
+                
+            }
+            
+            //This needs to be random
+        }
+
     }
 }

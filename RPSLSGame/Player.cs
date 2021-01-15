@@ -6,33 +6,29 @@ using System.Threading.Tasks;
 
 namespace RPSLSGame
 {
-    public class Player
+    class Player
     {
         //member variables
         public string playerName;
-        List<Gesture> gestures;
-        Rock rock;
-        Scissor scissor;
-        Paper paper;
-        Lizard lizard;
-        Spock spock;
+        public List<string> gestures;
+        
 
         //constructor
         public Player()
         {            
-            gestures = new List<Gesture>();
+            gestures = new List<string>();
 
-            rock = new Rock();
-            paper = new Paper();
-            scissor = new Scissor();
-            lizard = new Lizard();
-            spock = new Spock();
+            Rock rock = new Rock();
+            Paper paper = new Paper();
+            Scissor scissor = new Scissor();
+            Lizard lizard = new Lizard();
+            Spock spock = new Spock();
 
-            gestures.Add(rock);
-            gestures.Add(paper);
-            gestures.Add(scissor);
-            gestures.Add(lizard);
-            gestures.Add(spock);
+            gestures.Add(rock.name);
+            gestures.Add(paper.name);
+            gestures.Add(scissor.name);
+            gestures.Add(lizard.name);
+            gestures.Add(spock.name);
         }
         //member methods
 

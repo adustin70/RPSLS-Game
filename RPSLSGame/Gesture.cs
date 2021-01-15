@@ -10,9 +10,12 @@ namespace RPSLSGame
     {
         // member varaibles
         public string name;
-        
-        // constructor
 
+        // constructor
+        public Gesture()
+        {
+            
+        }
 
         // member methods
         
