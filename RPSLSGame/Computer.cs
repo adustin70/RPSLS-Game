@@ -28,8 +28,6 @@ namespace RPSLSGame
             }
             Console.WriteLine($"{playerName} chooses {gestures[rand].name}.");
             return rand;
-
-            //This needs to be random
         }
 
     }

@@ -20,9 +20,21 @@ namespace RPSLSGame
         }
 
         //member methods
-        public int SelectGesture()
+        public int FirstPlayerSelectGesture()
         {
-            Console.WriteLine($"{playerName} Choose a gesture. {playerTwo.playerName} Choose a gesture.");
+            Console.WriteLine($"{playerName} Choose a gesture.");
+            //May not do what I want it to ^^
+            for (int i = 0; i < gestures.Count; i++)
+            {
+                Console.WriteLine($"Press {i} for {gestures[i].name}");
+            }
+            string userInput = Console.ReadLine();
+            int yourGesture = Int32.Parse(userInput);
+            return yourGesture;
+        }
+        public int SecondPlayerSelectGesture()
+        {
+            Console.WriteLine($"{playerTwo.playerName} Choose a gesture.");
             //May not do what I want it to ^^
             for (int i = 0; i < gestures.Count; i++)
             {
@@ -33,6 +45,6 @@ namespace RPSLSGame
             return yourGesture;
         }
 
-
+        //Probably should have a way to check if co-op then give both players the ability to choose???
     }
 }
