@@ -10,6 +10,7 @@ namespace RPSLSGame
     {
         // member varaibles
         public string name;
+        
 
         // constructor
         public Gesture()
@@ -18,7 +19,18 @@ namespace RPSLSGame
         }
 
         // member methods
-        
+        public void GestureLoses()
+        {
+            if (name != name)
+            {
+                Console.WriteLine("Winner");
+            }
+            else if (name == name)
+            {
+                Console.WriteLine("You tied");
+            }
+            //Feels off ^^ don't forget to test
+        }
 
     }
 }

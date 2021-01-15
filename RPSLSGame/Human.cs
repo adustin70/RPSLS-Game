@@ -45,6 +45,6 @@ namespace RPSLSGame
             return yourGesture;
         }
 
-        //Probably should have a way to check if co-op then give both players the ability to choose???
+        
     }
 }

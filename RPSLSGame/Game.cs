@@ -8,27 +8,42 @@ namespace RPSLSGame
 {
     class Game
     {
-        ////member variables
-        //Player playerOne;
-        //Player playerTwo;
+        //member variables
+        Player playerOne;
+        Player playerTwo;
+        Player computer;
 
-        ////constructor
-        //public Game()
-        //{
-        //    playerOne = new Player();
-        //    playerTwo = new Player();
-        //}
-        ////member methods
+        //constructor
+        public Game()
+        {
+            playerOne = new Player();
+            playerTwo = new Player();
+            computer = new Player();
+        }
+        //member methods
 
-        //public void DisplayRules()
-        //{
-        //    Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with most rounds won wins the game.");
-        //}
+        public void DisplayRules()
+        {
+            Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with best two out of three wins.");
+        }
 
-        //public void SelectPlayers()
-        //{
-        //    if ()
-        //}
+        public void SelectPlayers()
+        {
+            string singlePlayer = "Single Player";
+            string multiPlayer = "Co-op";
+
+            Console.WriteLine($"Select {singlePlayer} or {multiPlayer}?");
+            string userInput = Console.ReadLine();
+
+            if (userInput == singlePlayer)
+            {
+                Console.WriteLine("You have chosen Single Player.");
+            }
+            else
+            {
+                Console.WriteLine("You have chosen Co-op.");
+            }
+        }
 
 
 

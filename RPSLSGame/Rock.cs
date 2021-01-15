@@ -14,10 +14,10 @@ namespace RPSLSGame
         public Rock()
         {
             name = "Rock";
-            
         }
 
         //member methods
+        
         
 
     }
