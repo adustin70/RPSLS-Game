@@ -11,6 +11,11 @@ namespace RPSLSGame
         //member variables
 
         //constructor
+        public Computer()
+        {
+            playerName = "Computer";
+        }
+
 
         //member methods
     }
