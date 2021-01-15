@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace RPSLSGame
 {
-    class Scissor: Gestures
+    class Scissor: Gesture
     {
         //member variables
 
         //constructor
+        public Scissor()
+        {
+            name = "Scissor";
+        }
 
         //member methods
     }

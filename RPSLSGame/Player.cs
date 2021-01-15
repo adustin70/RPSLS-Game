@@ -10,9 +10,12 @@ namespace RPSLSGame
     {
         //member variables
         string playerName;
+        List<Gesture> gestures = new List<Gesture>();
 
         //constructor
-
+        public Player()
+        {
+        }
         //member methods
 
 

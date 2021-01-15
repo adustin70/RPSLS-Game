@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace RPSLSGame
 {
-    public abstract class Gestures
+    public abstract class Gesture
     {
-        public List<Gestures> gestures;
+        // member varaibles
+        public string name;
+        
+        // constructor
+
+
+        // member methods
+        
+
     }
 }
+                                                     /*is there a way to keep track of what a gesture loses to?*/
 //*Rock crushes Scissors
 //Scissors cuts Paper
 //Paper covers Rock
