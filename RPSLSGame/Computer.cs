@@ -9,6 +9,7 @@ namespace RPSLSGame
     class Computer : Player
     {
         //member variables
+        static Random random = new Random();
 
         //constructor
         public Computer()
@@ -18,15 +19,16 @@ namespace RPSLSGame
 
 
         //member methods
-        public void ComputerSelectGesture()
+        public int ComputerSelectGesture()
         {
-            
-            
+            int rand = random.Next(gestures.Count);
             for (int i = 0; i < gestures.Count; i++)
             {
-                
+                Console.WriteLine($"{playerName} choices are {gestures[i].name}.");
             }
-            
+            Console.WriteLine($"{playerName} chooses {gestures[rand].name}.");
+            return rand;
+
             //This needs to be random
         }
 

@@ -10,13 +10,13 @@ namespace RPSLSGame
     {
         //member variables
         public string playerName;
-        public List<string> gestures;
+        public List<Gesture> gestures;
         
 
         //constructor
         public Player()
         {            
-            gestures = new List<string>();
+            gestures = new List<Gesture>();
 
             Rock rock = new Rock();
             Paper paper = new Paper();
@@ -24,11 +24,11 @@ namespace RPSLSGame
             Lizard lizard = new Lizard();
             Spock spock = new Spock();
 
-            gestures.Add(rock.name);
-            gestures.Add(paper.name);
-            gestures.Add(scissor.name);
-            gestures.Add(lizard.name);
-            gestures.Add(spock.name);
+            gestures.Add(rock);
+            gestures.Add(paper);
+            gestures.Add(scissor);
+            gestures.Add(lizard);
+            gestures.Add(spock);
         }
         //member methods
 

@@ -10,8 +10,8 @@ namespace RPSLSGame
     {
         static void Main(string[] args)
         {
-            Human human = new Human();
-            human.SelectGesture();
+            Computer computer = new Computer();
+            computer.ComputerSelectGesture();
             
         }
     }

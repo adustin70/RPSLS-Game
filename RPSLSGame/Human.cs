@@ -26,12 +26,11 @@ namespace RPSLSGame
             //May not do what I want it to ^^
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"Press {i} for {gestures[i]}");
+                Console.WriteLine($"Press {i} for {gestures[i].name}");
             }
             string userInput = Console.ReadLine();
             int yourGesture = Int32.Parse(userInput);
             return yourGesture;
-
         }
 
 
