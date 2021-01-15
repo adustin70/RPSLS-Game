@@ -23,7 +23,7 @@ namespace RPSLSGame
         public int FirstPlayerSelectGesture()
         {
             Console.WriteLine($"{playerName} Choose a gesture.");
-            //May not do what I want it to ^^
+            
             for (int i = 0; i < gestures.Count; i++)
             {
                 Console.WriteLine($"Press {i} for {gestures[i].name}");
@@ -35,7 +35,7 @@ namespace RPSLSGame
         public int SecondPlayerSelectGesture()
         {
             Console.WriteLine($"{playerTwo.playerName} Choose a gesture.");
-            //May not do what I want it to ^^
+            
             for (int i = 0; i < gestures.Count; i++)
             {
                 Console.WriteLine($"Press {i} for {gestures[i].name}");
