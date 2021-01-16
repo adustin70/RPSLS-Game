@@ -10,28 +10,10 @@ namespace RPSLSGame
     {
         // member varaibles
         public string name;
-        
 
         // constructor
-        public Gesture()
-        {
-            
-        }
 
         // member methods
-        public void GestureLoses()
-        {
-            if (name != name)
-            {
-                Console.WriteLine("Winner");
-            }
-            else if (name == name)
-            {
-                Console.WriteLine("You tied");
-            }
-            //Feels off ^^ don't forget to test
-        }
-
     }
 }
                                                      /*is there a way to keep track of what a gesture loses to?*/
