@@ -8,7 +8,7 @@ namespace RPSLSGame
 {
     class Rock : Gesture
     {
-        //member variables
+        //member variables        
 
         //constructor
         public Rock()
