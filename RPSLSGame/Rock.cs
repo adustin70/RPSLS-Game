@@ -8,12 +8,14 @@ namespace RPSLSGame
 {
     class Rock : Gesture
     {
-        //member variables        
+        //member variables
+        
 
         //constructor
-        public Rock()
+        public Rock(Paper paper, Spock spock)
         {
             name = "Rock";
+            string[] losesTo = { paper.name, spock.name};
         }
 
         //member methods
