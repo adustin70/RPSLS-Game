@@ -11,10 +11,10 @@ namespace RPSLSGame
         //member variables
 
         //constructor
-        public Scissor(Rock rock, Spock spock)
+        public Scissor()
         {
             name = "Scissor";
-            string[] losesTo = { rock.name, spock.name };
+            
         }
 
         //member methods

@@ -12,6 +12,11 @@ namespace RPSLSGame
         Human playerOne;
         Human playerTwo;
         Computer computer;
+        Rock rock;
+        Paper paper;
+        Scissor scissor;
+        Lizard lizard;
+        Spock spock;
 
         //constructor
         public Game()
@@ -19,6 +24,11 @@ namespace RPSLSGame
             playerOne = new Human();
             playerTwo = new Human();
             computer = new Computer();
+            rock = new Rock();
+            paper = new Paper();
+            scissor = new Scissor();
+            lizard = new Lizard();
+            spock = new Spock();
         }
         //member methods
 

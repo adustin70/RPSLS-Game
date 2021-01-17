@@ -24,7 +24,7 @@ namespace RPSLSGame
             int rand = random.Next(gestures.Count);
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"{playerName} choices are {gestures[i].name}.");
+                Console.WriteLine($"{playerName} choices are {gestures[i].name}.\n");
             }
             Console.WriteLine($"{playerName} chooses {gestures[rand].name}.");
             

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPSLSGame
 {
-    public abstract class Gesture
+    public class Gesture
     {
         // member varaibles
         public string name;
+        
 
         // constructor
 
