@@ -11,16 +11,14 @@ namespace RPSLSGame
         //member variables
         Human playerOne;
         Human playerTwo;
-        Computer computer;
-        
+        Computer computer;        
 
         //constructor
         public Game()
         {
             playerOne = new Human();
             playerTwo = new Human();
-            computer = new Computer();
-            
+            computer = new Computer();            
         }  
         //member methods
 
@@ -45,6 +43,7 @@ namespace RPSLSGame
                 {
                     playerOne.FirstPlayerSelectGesture();
                     computer.ComputerSelectGesture();
+                    CompareComputerGestures();
                 }
             }            
             else if (userInput == multiPlayer)
@@ -52,6 +51,7 @@ namespace RPSLSGame
                 Console.WriteLine($"You have chosen MultiPlayer.\n");
                 playerOne.FirstPlayerSelectGesture();
                 playerTwo.SecondPlayerSelectGesture();
+                CompareHumanGestures();
             }
         }
         
@@ -181,6 +181,144 @@ namespace RPSLSGame
             else if (playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Spock")
             {
                 if (playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Spock")
+                {
+                    Console.WriteLine("Spock vaporizes Rock\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Spock vaporizes Rock\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+        }
+
+        public void CompareComputerGestures()
+        {
+            if (playerOne.playerGesture == computer.playerGesture)
+            {
+                Console.WriteLine("It's a tie");
+            }
+            else if (playerOne.playerGesture == "Rock" && computer.playerGesture == "Scissor" || playerOne.playerGesture == "Scissor" && computer.playerGesture == "Rock")
+            {
+                if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Rock")
+                {
+                    Console.WriteLine("Rock crushes Scissors\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Rock crushes Scissors\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Rock" && computer.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && computer.playerGesture == "Rock")
+            {
+                if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Rock")
+                {
+                    Console.WriteLine("Rock crushes Lizard\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Rock crushes Lizard\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && computer.playerGesture == "Paper")
+            {
+                if (playerOne.playerGesture == "Rock" && computer.playerGesture == "Paper")
+                {
+                    Console.WriteLine("Paper covers Rock\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Paper covers Rock\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && computer.playerGesture == "Paper")
+            {
+                if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Paper")
+                {
+                    Console.WriteLine("Paper disapproves Spock\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Paper disapproves Spock\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && computer.playerGesture == "Scissor")
+            {
+                if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Scissor")
+                {
+                    Console.WriteLine("Scissor cuts Paper\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Scissor cuts Paper\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && computer.playerGesture == "Scissor")
+            {
+                if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Scissor")
+                {
+                    Console.WriteLine("Scissor decapitates Lizard\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Scissor decapitates Lizard\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && computer.playerGesture == "Lizard")
+            {
+                if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Lizard")
+                {
+                    Console.WriteLine("Lizard poisons Spock\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Lizard poisons Spock\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && computer.playerGesture == "Lizard")
+            {
+                if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Lizard")
+                {
+                    Console.WriteLine("Lizard eats Paper\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Lizard eats Paper\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Scissor" || playerOne.playerGesture == "Scissor" && computer.playerGesture == "Spock")
+            {
+                if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Spock")
+                {
+                    Console.WriteLine("Spock smashes Scissor\n");
+                    Console.WriteLine("Player two wins this round");
+                }
+                else
+                {
+                    Console.WriteLine("Spock smashes Scissor\n");
+                    Console.WriteLine("Player one wins this round");
+                }
+            }
+            else if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && computer.playerGesture == "Spock")
+            {
+                if (playerOne.playerGesture == "Rock" && computer.playerGesture == "Spock")
                 {
                     Console.WriteLine("Spock vaporizes Rock\n");
                     Console.WriteLine("Player two wins this round");
