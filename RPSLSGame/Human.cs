@@ -31,9 +31,9 @@ namespace RPSLSGame
 
             string userInput = Console.ReadLine();
 
-            List<string> vaildOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
+            List<string> validOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
 
-            if (vaildOptions.Contains(userInput))
+            if (validOptions.Contains(userInput))
             {
                 playerGesture = userInput;
                 return userInput;
@@ -55,9 +55,9 @@ namespace RPSLSGame
             }
             string userInput = Console.ReadLine();
 
-            List<string> vaildOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
+            List<string> validOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
 
-            if (vaildOptions.Contains(userInput))
+            if (validOptions.Contains(userInput))
             {
                 playerGesture = userInput;
                 return userInput;
