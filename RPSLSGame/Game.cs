@@ -12,11 +12,7 @@ namespace RPSLSGame
         Human playerOne;
         Human playerTwo;
         Computer computer;
-        Rock rock;
-        Paper paper;
-        Scissor scissor;
-        Lizard lizard;
-        Spock spock;
+        Player player;
 
         //constructor
         public Game()
@@ -24,17 +20,13 @@ namespace RPSLSGame
             playerOne = new Human();
             playerTwo = new Human();
             computer = new Computer();
-            rock = new Rock();
-            paper = new Paper();
-            scissor = new Scissor();
-            lizard = new Lizard();
-            spock = new Spock();
-        }
+            player = new Player();
+        }  
         //member methods
 
         public void DisplayRules()
         {
-            Console.WriteLine("Select solo or Co-op then select your gestures\n" + "player with best two out of three wins.\n");
+            Console.WriteLine("Select single player or multiplayer then choose your gestures.\n" + "Player with best two out of three wins.\n");
         }
 
         public void SelectPlayers()
@@ -62,7 +54,6 @@ namespace RPSLSGame
                 }
             }            
         }
-
         
 
         //1. Display the rules

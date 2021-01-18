@@ -22,11 +22,12 @@ namespace RPSLSGame
         public void ComputerSelectGesture()
         {
             int rand = random.Next(gestures.Count);
+            Console.WriteLine($"{playerName} choices are:");
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"{playerName} choices are {gestures[i].name}.\n");
+                Console.WriteLine(gestures[i].name);
             }
-            Console.WriteLine($"{playerName} chooses {gestures[rand].name}.");
+            Console.WriteLine($"\n{playerName} chooses {gestures[rand].name}.");
             
         }
 

@@ -20,29 +20,30 @@ namespace RPSLSGame
         }
 
         //member methods
-        public int FirstPlayerSelectGesture()
+        public string FirstPlayerSelectGesture()
         {
             Console.WriteLine($"{playerName} Choose a gesture.");
             
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"Press {i} for {gestures[i].name}");
+                Console.WriteLine($"{gestures[i].name}");
             }
+            
             string userInput = Console.ReadLine();
-            int yourGesture = Int32.Parse(userInput);
-            return yourGesture;
+            
+            return userInput;
         }
-        public int SecondPlayerSelectGesture()
+        public string SecondPlayerSelectGesture()
         {
             Console.WriteLine($"{playerTwo.playerName} Choose a gesture.");
             
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"Press {i} for {gestures[i].name}");
+                Console.WriteLine($"{gestures[i].name}");
             }
             string userInput = Console.ReadLine();
-            int yourGesture = Int32.Parse(userInput);
-            return yourGesture;
+            
+            return userInput;
         }
 
         
