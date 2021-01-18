@@ -32,25 +32,50 @@ namespace RPSLSGame
             int singlePlayer = 1;
             int multiPlayer = 2;
 
-            Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.");            
+            Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.\n");            
             int userInput = Int32.Parse(Console.ReadLine());
 
             if (userInput == singlePlayer)
             {
                 Console.WriteLine("You have chosen Single Player.\n");
-                playerOne.FirstPlayerSelectGesture();
-                computer.ComputerSelectGesture();
-                CompareComputerGestures();                
+
+                while (playerOne.totalWins < 3 && computer.totalWins < 3)
+                {
+                    playerOne.FirstPlayerSelectGesture();
+                    computer.ComputerSelectGesture();
+                    CompareComputerGestures();
+                }
+                    if (playerOne.totalWins > computer.totalWins)
+                    {
+                        Console.WriteLine("\nPlayer one wins the game!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nThe computer wins.");
+                    }
+                
             }            
             else if (userInput == multiPlayer)
             {
                 Console.WriteLine($"You have chosen MultiPlayer.\n");
-                playerOne.FirstPlayerSelectGesture();
-                playerTwo.SecondPlayerSelectGesture();
-                CompareHumanGestures();
+
+                while (playerOne.totalWins < 3 && playerTwo.totalWins < 3)
+                {
+                    playerOne.FirstPlayerSelectGesture();
+                    playerTwo.SecondPlayerSelectGesture();
+                    CompareHumanGestures();
+                }
+                    if (playerOne.totalWins > playerTwo.totalWins)
+                    {
+                        Console.WriteLine("\nPlayer one wins the game!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nPlayer two wins the game!");
+                    }
+                
             }
-        }
-        
+        }        
         public void CompareHumanGestures()
         {
             if (playerOne.playerGesture == playerTwo.playerGesture)
@@ -63,11 +88,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Rock crushes Scissors\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Rock crushes Scissors\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Rock")
@@ -76,11 +103,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Rock crushes Lizard\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Rock crushes Lizard\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Paper")
@@ -89,11 +118,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Paper covers Rock\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Paper covers Rock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Paper")
@@ -102,11 +133,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Paper disapproves Spock\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Paper disapproves Spock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Scissor" && playerTwo.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Scissor")
@@ -115,11 +148,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Scissor cuts Paper\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else 
                 {
                     Console.WriteLine("Scissor cuts Paper\n");
-                    Console.WriteLine("Player one wins this round");                    
+                    Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Scissor" && playerTwo.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Scissor")
@@ -128,11 +163,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Scissor decapitates Lizard\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Scissor decapitates Lizard\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Lizard")
@@ -141,11 +178,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Lizard poisons Spock\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Lizard poisons Spock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Lizard" && playerTwo.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && playerTwo.playerGesture == "Lizard")
@@ -154,11 +193,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Lizard eats Paper\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Lizard eats Paper\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Scissor" || playerOne.playerGesture == "Scissor" && playerTwo.playerGesture == "Spock")
@@ -167,11 +208,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Spock smashes Scissor\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Spock smashes Scissor\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Spock" && playerTwo.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && playerTwo.playerGesture == "Spock")
@@ -180,15 +223,16 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Spock vaporizes Rock\n");
                     Console.WriteLine("Player two wins this round");
+                    playerTwo.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Spock vaporizes Rock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
         }
-
         public void CompareComputerGestures()
         {
             if (playerOne.playerGesture == computer.playerGesture)
@@ -201,11 +245,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Rock crushes Scissors\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Rock crushes Scissors\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Rock" && computer.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && computer.playerGesture == "Rock")
@@ -214,11 +260,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Rock crushes Lizard\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Rock crushes Lizard\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && computer.playerGesture == "Paper")
@@ -227,11 +275,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Paper covers Rock\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Paper covers Rock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Paper" && computer.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && computer.playerGesture == "Paper")
@@ -240,11 +290,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Paper disapproves Spock\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Paper disapproves Spock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && computer.playerGesture == "Scissor")
@@ -253,11 +305,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Scissor cuts Paper\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Scissor cuts Paper\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Scissor" && computer.playerGesture == "Lizard" || playerOne.playerGesture == "Lizard" && computer.playerGesture == "Scissor")
@@ -266,11 +320,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Scissor decapitates Lizard\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Scissor decapitates Lizard\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Spock" || playerOne.playerGesture == "Spock" && computer.playerGesture == "Lizard")
@@ -279,11 +335,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Lizard poisons Spock\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Lizard poisons Spock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Lizard" && computer.playerGesture == "Paper" || playerOne.playerGesture == "Paper" && computer.playerGesture == "Lizard")
@@ -292,11 +350,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Lizard eats Paper\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Lizard eats Paper\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Scissor" || playerOne.playerGesture == "Scissor" && computer.playerGesture == "Spock")
@@ -305,11 +365,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Spock smashes Scissor\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Spock smashes Scissor\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
             else if (playerOne.playerGesture == "Spock" && computer.playerGesture == "Rock" || playerOne.playerGesture == "Rock" && computer.playerGesture == "Spock")
@@ -318,11 +380,13 @@ namespace RPSLSGame
                 {
                     Console.WriteLine("Spock vaporizes Rock\n");
                     Console.WriteLine("Computer wins this round");
+                    computer.totalWins++;
                 }
                 else
                 {
                     Console.WriteLine("Spock vaporizes Rock\n");
                     Console.WriteLine("Player one wins this round");
+                    playerOne.totalWins++;
                 }
             }
         }

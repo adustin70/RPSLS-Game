@@ -11,12 +11,14 @@ namespace RPSLSGame
         //member variables
         public string playerName;
         public string playerGesture;
+        public int totalWins;
         public List<Gesture> gestures;
         
 
         //constructor
         public Player()
-        {            
+        {
+            totalWins = 0;
             gestures = new List<Gesture>();
 
             Rock rock = new Rock();

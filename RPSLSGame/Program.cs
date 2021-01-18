@@ -12,7 +12,9 @@ namespace RPSLSGame
         {
             Game game = new Game();
             game.DisplayRules();
-            game.RunGame();            
+            game.RunGame();
+
+            Console.ReadLine();
         }
     }
 }
