@@ -12,9 +12,7 @@ namespace RPSLSGame
         {
             Game game = new Game();
             game.DisplayRules();
-            game.SelectPlayers();
-            game.CompareHumanGestures();
-            
+            game.RunGame();            
         }
     }
 }
