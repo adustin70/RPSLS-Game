@@ -10,6 +10,7 @@ namespace RPSLSGame
     {
         //member variables
         public string playerName;
+        public string playerGesture;
         public List<Gesture> gestures;
         
 

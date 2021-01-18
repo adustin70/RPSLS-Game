@@ -30,7 +30,7 @@ namespace RPSLSGame
             }
             
             string userInput = Console.ReadLine();
-            
+            playerGesture = userInput;
             return userInput;
         }
         public string SecondPlayerSelectGesture()
@@ -42,7 +42,7 @@ namespace RPSLSGame
                 Console.WriteLine($"{gestures[i].name}");
             }
             string userInput = Console.ReadLine();
-            
+            playerGesture = userInput;
             return userInput;
         }
 
