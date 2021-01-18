@@ -32,49 +32,58 @@ namespace RPSLSGame
             int singlePlayer = 1;
             int multiPlayer = 2;
 
-            Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.\n");            
+            Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.\n");
             int userInput = Int32.Parse(Console.ReadLine());
 
-            if (userInput == singlePlayer)
+            if (userInput != singlePlayer && userInput != multiPlayer)
             {
-                Console.WriteLine("You have chosen Single Player.\n");
-
-                while (playerOne.totalWins < 3 && computer.totalWins < 3)
-                {
-                    playerOne.FirstPlayerSelectGesture();
-                    computer.ComputerSelectGesture();
-                    CompareComputerGestures();
-                }
-                    if (playerOne.totalWins > computer.totalWins)
-                    {
-                        Console.WriteLine("\nPlayer one wins the game!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nThe computer wins.");
-                    }
-                
-            }            
-            else if (userInput == multiPlayer)
-            {
-                Console.WriteLine($"You have chosen MultiPlayer.\n");
-
-                while (playerOne.totalWins < 3 && playerTwo.totalWins < 3)
-                {
-                    playerOne.FirstPlayerSelectGesture();
-                    playerTwo.SecondPlayerSelectGesture();
-                    CompareHumanGestures();
-                }
-                    if (playerOne.totalWins > playerTwo.totalWins)
-                    {
-                        Console.WriteLine("\nPlayer one wins the game!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nPlayer two wins the game!");
-                    }
-                
+                Console.WriteLine("Invalid selection please try again\n");
+                RunGame();
             }
+            else
+            {
+                if (userInput == singlePlayer)
+                {
+                    Console.WriteLine("You have chosen Single Player.\n");
+
+                    while (playerOne.totalWins < 3 && computer.totalWins < 3)
+                    {
+                        playerOne.FirstPlayerSelectGesture();
+                        computer.ComputerSelectGesture();
+                        CompareComputerGestures();
+                    }
+                        if (playerOne.totalWins > computer.totalWins)
+                        {
+                            Console.WriteLine("\nPlayer one wins the game!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nThe computer wins.");
+                        }
+                
+                }            
+                else if (userInput == multiPlayer)
+                {
+                    Console.WriteLine($"You have chosen MultiPlayer.\n");
+
+                    while (playerOne.totalWins < 3 && playerTwo.totalWins < 3)
+                    {
+                        playerOne.FirstPlayerSelectGesture();
+                        playerTwo.SecondPlayerSelectGesture();
+                        CompareHumanGestures();
+                    }
+                        if (playerOne.totalWins > playerTwo.totalWins)
+                        {
+                            Console.WriteLine("\nPlayer one wins the game!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nPlayer two wins the game!");
+                        }                
+                }
+
+            }
+
         }        
         public void CompareHumanGestures()
         {

@@ -27,11 +27,23 @@ namespace RPSLSGame
             for (int i = 0; i < gestures.Count; i++)
             {
                 Console.WriteLine($"{gestures[i].name}");
+            }            
+
+            string userInput = Console.ReadLine();
+
+            List<string> vaildOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
+
+            if (vaildOptions.Contains(userInput))
+            {
+                playerGesture = userInput;
+                return userInput;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice try again");
+                return FirstPlayerSelectGesture();
             }
             
-            string userInput = Console.ReadLine();
-            playerGesture = userInput;
-            return userInput;
         }
         public string SecondPlayerSelectGesture()
         {
@@ -42,8 +54,20 @@ namespace RPSLSGame
                 Console.WriteLine($"{gestures[i].name}");
             }
             string userInput = Console.ReadLine();
-            playerGesture = userInput;
-            return userInput;
+
+            List<string> vaildOptions = new List<string>() { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
+
+            if (vaildOptions.Contains(userInput))
+            {
+                playerGesture = userInput;
+                return userInput;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice try again.");
+                return SecondPlayerSelectGesture();
+            }
+            
         }
 
         
