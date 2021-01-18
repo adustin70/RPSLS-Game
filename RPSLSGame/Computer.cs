@@ -28,7 +28,7 @@ namespace RPSLSGame
                 Console.WriteLine(gestures[i].name);
             }
             Console.WriteLine($"\n{playerName} chooses {gestures[rand].name}.");
-            
+            playerGesture = Console.ReadLine();
         }
 
     }
