@@ -29,11 +29,11 @@ namespace RPSLSGame
 
         public void RunGame()
         {
-            int singlePlayer = 1;
-            int multiPlayer = 2;
+            string singlePlayer = "1";
+            string multiPlayer = "2";
 
             Console.WriteLine($"Select {singlePlayer} for Single Player or {multiPlayer} for MultiPlayer.\n");
-            int userInput = Int32.Parse(Console.ReadLine());
+            string userInput = Console.ReadLine();
 
             if (userInput != singlePlayer && userInput != multiPlayer)
             {
