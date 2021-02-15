@@ -13,7 +13,7 @@ namespace RPSLSGame
         public string playerGesture;
         public int totalWins;
         public List<Gesture> gestures;
-        
+
 
         //constructor
         public Player()
@@ -23,7 +23,7 @@ namespace RPSLSGame
 
             Rock rock = new Rock();
             Paper paper = new Paper();
-            Scissor scissor = new Scissor();
+            Scissors scissor = new Scissors();
             Lizard lizard = new Lizard();
             Spock spock = new Spock();
 
@@ -34,6 +34,12 @@ namespace RPSLSGame
             gestures.Add(spock);
         }
         //member methods
+
+        public virtual void ChooseGesture()
+        {
+
+        }
+        
 
 
     }

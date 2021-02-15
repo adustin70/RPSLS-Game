@@ -19,7 +19,7 @@ namespace RPSLSGame
 
 
         //member methods
-        public string ComputerSelectGesture()
+        public override void ChooseGesture()
         {
             int rand = random.Next(gestures.Count);
             Console.WriteLine($"{playerName} choices are:");
@@ -29,7 +29,7 @@ namespace RPSLSGame
             }
             Console.WriteLine($"\n{playerName} chooses {gestures[rand].name}.");
             playerGesture = gestures[rand].name;
-            return playerGesture;
+            Console.WriteLine(playerGesture);
         }
 
     }

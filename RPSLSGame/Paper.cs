@@ -14,7 +14,12 @@ namespace RPSLSGame
         public Paper()
         {
             name = "Paper";
-            
+            string rock = "Rock";
+            string spock = "Spock";
+            List<string> beats = new List<string>();
+
+            beats.Add(rock);
+            beats.Add(spock);
         }
 
         //member methods

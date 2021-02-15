@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 
 namespace RPSLSGame
 {
-    class Rock : Gesture
+    class Scissors: Gesture
     {
         //member variables
 
         //constructor
-        public Rock()
+        public Scissors()
         {
-            name = "Rock";
-            string scissor = "Scissors";
+            name = "Scissors";
+            string paper = "Paper";
             string lizard = "Lizard";
             List<string> beats = new List<string>();
 
-            beats.Add(scissor);
+            beats.Add(paper);
             beats.Add(lizard);
-            
         }
 
         //member methods
-        
-        
-
     }
 }
